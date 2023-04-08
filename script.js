@@ -7,29 +7,29 @@ function getComputerChoice () {
 function playRound (playerSelection, computerSelection) {
     /* if player selection = computer selection
     then "Draw!" */
-    if (playerSelection === computerSelection) {
+    if (playerSelection.toLowerCase() === computerSelection.toLowerCase()) {
         return ("Draw!")
     }
     else {
-        switch (playerSelection) {
-            case "Rock":
-                if (computerSelection === "Paper") {
+        switch (playerSelection.toLowerCase()) {
+            case "rock":
+                if (computerSelection.toLowerCase() === "paper") {
                     return (`You Lose! ${computerSelection} beats ${playerSelection}!`)
                 }
                 else {
                     return (`You Win! ${playerSelection} beats ${computerSelection}!`)
                 }
                 break
-            case "Paper":
-                if (computerSelection === "Scissors") {
+            case "paper":
+                if (computerSelection.toLowerCase() === "scissors") {
                     return (`You Lose! ${computerSelection} beats ${playerSelection}!`)
                 }
                 else {
                     return (`You Win! ${playerSelection} beats ${computerSelection}!`)
                 }
                 break
-            case "Scissors":
-                if (computerSelection === "Rock") {
+            case "scissors":
+                if (computerSelection.toLowerCase() === "rock") {
                     return (`You Lose! ${computerSelection} beats ${playerSelection}!`)
                 }
                 else {
@@ -42,6 +42,6 @@ function playRound (playerSelection, computerSelection) {
     }
 }
 
-const playerSelection = "Rock"
+const playerSelection = "SCISSORs"
 const computerSelection = getComputerChoice()
 console.log(playRound(playerSelection, computerSelection))
