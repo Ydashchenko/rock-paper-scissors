@@ -42,6 +42,24 @@ function playRound (playerSelection, computerSelection) {
     }
 }
 
-const playerSelection = "SCISSORs"
-const computerSelection = getComputerChoice()
-console.log(playRound(playerSelection, computerSelection))
+function game () {
+    let player = 0
+    let computer = 0
+    for (let step = 1; step <= 5; step++) {
+        playerSelection = prompt("Rock, paper or scissors?")
+        computerSelection = getComputerChoice()
+        playRound(playerSelection, computerSelection)
+        if (playRound(playerSelection, computerSelection)[4] === "W") {
+            player++
+        }
+        else if (playRound(playerSelection, computerSelection)[4] === "L") {
+            computer++
+        }
+        console.log(`Player - ${player}, computer - ${computer}`)
+    }
+    player > computer ? alert("Player is the WINNER!") :
+        computer > player ? alert("Computer is the WINNER!") : alert("It's DRAW!")
+}
+
+game()
+
