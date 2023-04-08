@@ -8,40 +8,40 @@ function playRound (playerSelection, computerSelection) {
     /* if player selection = computer selection
     then "Draw!" */
     if (playerSelection === computerSelection) {
-        console.log("Draw!")
+        return ("Draw!")
     }
     else {
         switch (playerSelection) {
             case "Rock":
                 if (computerSelection === "Paper") {
-                    console.log(`You Lose! ${computerSelection} beats ${playerSelection}!`)
+                    return (`You Lose! ${computerSelection} beats ${playerSelection}!`)
                 }
                 else {
-                    console.log(`You Win! ${playerSelection} beats ${computerSelection}!`)
+                    return (`You Win! ${playerSelection} beats ${computerSelection}!`)
                 }
                 break
             case "Paper":
                 if (computerSelection === "Scissors") {
-                    console.log(`You Lose! ${computerSelection} beats ${playerSelection}!`)
+                    return (`You Lose! ${computerSelection} beats ${playerSelection}!`)
                 }
                 else {
-                    console.log(`You Win! ${playerSelection} beats ${computerSelection}!`)
+                    return (`You Win! ${playerSelection} beats ${computerSelection}!`)
                 }
                 break
             case "Scissors":
                 if (computerSelection === "Rock") {
-                    console.log(`You Lose! ${computerSelection} beats ${playerSelection}!`)
+                    return (`You Lose! ${computerSelection} beats ${playerSelection}!`)
                 }
                 else {
-                    console.log(`You Win! ${playerSelection} beats ${computerSelection}!`)
+                    return (`You Win! ${playerSelection} beats ${computerSelection}!`)
                 }
                 break
             default:
-                console.log("Give me Rock, Paper os Scissors!")
+                return ("Give me Rock, Paper os Scissors!")
         }
     }
 }
 
 const playerSelection = "Rock"
 const computerSelection = getComputerChoice()
-playRound(playerSelection, computerSelection)
+console.log(playRound(playerSelection, computerSelection))
