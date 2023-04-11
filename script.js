@@ -39,22 +39,27 @@ function playRound (playerSelection, computerSelection) {
     }
 }
 
-
+const results = document.getElementById("results")
 
 const rock = document.getElementById("rock")
 rock.addEventListener('click', function(e) {
     console.log(playRound("Rock", getComputerChoice()))
+    results.textContent = playRound("Rock", getComputerChoice())
 })
 
 const paper = document.getElementById("paper")
 paper.addEventListener('click', function(e) {
     console.log(playRound("Paper", getComputerChoice()))
+    results.textContent = playRound("Rock", getComputerChoice())
 })
 
 const scissors = document.getElementById("scissors")
 scissors.addEventListener('click', function(e) {
     console.log(playRound("Scissors", getComputerChoice()))
+    results.textContent = playRound("Rock", getComputerChoice())
 })
+
+
 
 
 /*function game () {
