@@ -19,7 +19,6 @@ function playRound (playerSelection, computerSelection) {
                 else {
                     return (`You Win! ${playerSelection} beats ${computerSelection}!`)
                 }
-                break
             case "paper":
                 if (computerSelection.toLowerCase() === "scissors") {
                     return (`You Lose! ${computerSelection} beats ${playerSelection}!`)
@@ -27,7 +26,6 @@ function playRound (playerSelection, computerSelection) {
                 else {
                     return (`You Win! ${playerSelection} beats ${computerSelection}!`)
                 }
-                break
             case "scissors":
                 if (computerSelection.toLowerCase() === "rock") {
                     return (`You Lose! ${computerSelection} beats ${playerSelection}!`)
@@ -35,14 +33,31 @@ function playRound (playerSelection, computerSelection) {
                 else {
                     return (`You Win! ${playerSelection} beats ${computerSelection}!`)
                 }
-                break
             default:
                 return ("Give me Rock, Paper os Scissors!")
         }
     }
 }
 
-function game () {
+
+
+const rock = document.getElementById("rock")
+rock.addEventListener('click', function(e) {
+    console.log(playRound("Rock", getComputerChoice()))
+})
+
+const paper = document.getElementById("paper")
+paper.addEventListener('click', function(e) {
+    console.log(playRound("Paper", getComputerChoice()))
+})
+
+const scissors = document.getElementById("scissors")
+scissors.addEventListener('click', function(e) {
+    console.log(playRound("Scissors", getComputerChoice()))
+})
+
+
+/*function game () {
     let player = 0
     let computer = 0
     for (let step = 1; step <= 5; step++) {
@@ -61,5 +76,6 @@ function game () {
         computer > player ? alert("Computer is the WINNER!") : alert("It's DRAW!")
 }
 
-game()
+game() */
 
+    
