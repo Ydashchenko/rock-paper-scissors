@@ -4,83 +4,92 @@ function getComputerChoice () {
     return answers[choice]
 }
 
-function playRound (playerSelection, computerSelection) {
-    /* if player selection = computer selection
-    then "Draw!" */
+function playRound (playerSelection) {
+    let computerSelection = getComputerChoice()
     if (playerSelection.toLowerCase() === computerSelection.toLowerCase()) {
-        return ("Draw!")
+        return "Draw!"
     }
     else {
         switch (playerSelection.toLowerCase()) {
             case "rock":
                 if (computerSelection.toLowerCase() === "paper") {
+                    computerScore++
+                    score.textContent = `${playerScore} - ${computerScore}`
                     return (`You Lose! ${computerSelection} beats ${playerSelection}!`)
                 }
                 else {
+                    playerScore++
+                    score.textContent = `${playerScore} - ${computerScore}`
                     return (`You Win! ${playerSelection} beats ${computerSelection}!`)
                 }
             case "paper":
                 if (computerSelection.toLowerCase() === "scissors") {
+                    computerScore++
+                    score.textContent = `${playerScore} - ${computerScore}`
                     return (`You Lose! ${computerSelection} beats ${playerSelection}!`)
                 }
                 else {
+                    playerScore++
+                    score.textContent = `${playerScore} - ${computerScore}`
                     return (`You Win! ${playerSelection} beats ${computerSelection}!`)
                 }
             case "scissors":
                 if (computerSelection.toLowerCase() === "rock") {
+                    computerScore++
+                    score.textContent = `${playerScore} - ${computerScore}`
                     return (`You Lose! ${computerSelection} beats ${playerSelection}!`)
                 }
                 else {
+                    playerScore++
+                    score.textContent = `${playerScore} - ${computerScore}`
                     return (`You Win! ${playerSelection} beats ${computerSelection}!`)
                 }
             default:
-                return ("Give me Rock, Paper os Scissors!")
+                    return ("Give me Rock, Paper os Scissors!")
         }
     }
 }
 
 const results = document.getElementById("results")
 
+
+const score = document.getElementById("score")
+let playerScore = 0
+let computerScore = 0
+score.textContent = `${playerScore} - ${computerScore}`
+
 const rock = document.getElementById("rock")
 rock.addEventListener('click', function(e) {
-    console.log(playRound("Rock", getComputerChoice()))
-    results.textContent = playRound("Rock", getComputerChoice())
+    console.log(results.textContent = playRound("Rock"))
 })
 
 const paper = document.getElementById("paper")
 paper.addEventListener('click', function(e) {
-    console.log(playRound("Paper", getComputerChoice()))
-    results.textContent = playRound("Rock", getComputerChoice())
+    console.log(results.textContent = playRound("Paper"))
 })
 
 const scissors = document.getElementById("scissors")
 scissors.addEventListener('click', function(e) {
-    console.log(playRound("Scissors", getComputerChoice()))
-    results.textContent = playRound("Rock", getComputerChoice())
+    console.log(results.textContent = playRound("Scissors"))
 })
 
 
 
-
-/*function game () {
-    let player = 0
-    let computer = 0
-    for (let step = 1; step <= 5; step++) {
-        playerSelection = prompt("Rock, paper or scissors?")
-        computerSelection = getComputerChoice()
-        playRound(playerSelection, computerSelection)
-        if (playRound(playerSelection, computerSelection)[4] === "W") {
-            player++
-        }
-        else if (playRound(playerSelection, computerSelection)[4] === "L") {
-            computer++
-        }
-        console.log(`Player - ${player}, computer - ${computer}`)
+/*do {
+    // playerSelection = prompt("Rock, paper or scissors?")
+    // playRound(playerSelection, computerSelection)
+    if (results.textContent[4] === "W") {
+        playerScore++
     }
-    player > computer ? alert("Player is the WINNER!") :
-        computer > player ? alert("Computer is the WINNER!") : alert("It's DRAW!")
-}
+    else if (results.textContent[4] === "L") {
+        computerScore++
+    }
+    console.log(`Player - ${player}, computer - ${computer}`)
+    score.textContent = `${playerScore} - ${computerScore}`
+    console.log(results.textContent[4])
+} while ((rock.click()) && (playerScore < 5 || computerScore < 5));*/
 
-game() */
+//player > computer ? alert("Player is the WINNER!") :
+  //  computer > player ? alert("Computer is the WINNER!") : alert("It's DRAW!")
 
     
