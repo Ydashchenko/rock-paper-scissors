@@ -51,7 +51,7 @@ function playRound (playerSelection) {
 }
 
 const results = document.getElementById("results")
-
+const winner = document.getElementById("winner")
 
 const score = document.getElementById("score")
 let playerScore = 0
@@ -61,16 +61,34 @@ score.textContent = `${playerScore} - ${computerScore}`
 const rock = document.getElementById("rock")
 rock.addEventListener('click', function(e) {
     console.log(results.textContent = playRound("Rock"))
+    if (playerScore == 5) {
+        winner.textContent = "Player WINS the whole match! MACHINES SUCK! HAHAHA"
+    }
+    if (computerScore == 5) {
+        winner.textContent = "Computer WINS the whole match! MACHINES ARE TAKING OVER! HAHAHA"
+    }
 })
 
 const paper = document.getElementById("paper")
 paper.addEventListener('click', function(e) {
     console.log(results.textContent = playRound("Paper"))
+    if (playerScore == 5) {
+        winner.textContent = "Player WINS the whole match! MACHINES SUCK! HAHAHA"
+    }
+    if (computerScore == 5) {
+        winner.textContent = "Computer WINS the whole match! MACHINES ARE TAKING OVER! HAHAHA"
+    }
 })
 
 const scissors = document.getElementById("scissors")
 scissors.addEventListener('click', function(e) {
     console.log(results.textContent = playRound("Scissors"))
+    if (playerScore == 5) {
+        winner.textContent = "Player WINS the whole match! MACHINES SUCK! HAHAHA"
+    }
+    if (computerScore == 5) {
+        winner.textContent = "Computer WINS the whole match! MACHINES ARE TAKING OVER! HAHAHA"
+    }
 })
 
 
